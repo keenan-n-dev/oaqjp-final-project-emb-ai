@@ -14,8 +14,8 @@ def sent_detector():
     # Pass the text to the sentiment_analyzer function and store the response
     emotions = emotion_detector(text_to_analyze)
     # Extract emotions from response
-    if emotions is None:
-        return "Invalid input! Try again."  
+    if emotions.get('dominant_emotion') is None:
+        return "Invalid text! Please try again!"  
     
     anger_score = emotions['anger']
     disgust_score = emotions['disgust']
